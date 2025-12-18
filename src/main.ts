@@ -8,6 +8,6 @@ const app = createApp(App)
 
 app.use(router)
 app.use(convexVue, {
-    url: 'your-convex-deployment-url'
-  })
+    url: import.meta.env.VITE_CONVEX_URL
+})
 app.mount('#app')
