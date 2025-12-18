@@ -16,14 +16,18 @@
         "format": "prettier --write --experimental-cli src/"
     },
     "dependencies": {
+        "@auth/core": "^0.37.4",
+        "@convex-dev/auth": "^0.0.90",
         "@tailwindcss/vite": "^4.1.18",
         "@vueuse/core": "^14.1.0",
+        "bcryptjs": "^3.0.3",
         "class-variance-authority": "^0.7.1",
         "clsx": "^2.1.1",
         "concurrently": "^9.2.1",
         "convex": "^1.22.0",
         "convex-vue": "^0.1.5",
         "lucide-vue-next": "^0.562.0",
+        "pinia": "^3.0.4",
         "reka-ui": "^2.6.1",
         "tailwind-merge": "^3.4.0",
         "tailwindcss": "^4.1.18",
@@ -32,6 +36,7 @@
     },
     "devDependencies": {
         "@tsconfig/node24": "^24.0.3",
+        "@types/bcryptjs": "^2.4.6",
         "@types/node": "^24.10.1",
         "@vitejs/plugin-vue": "^6.0.2",
         "@vue/eslint-config-prettier": "^10.2.0",
