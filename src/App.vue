@@ -7,13 +7,13 @@ const { data, isPending } = useConvexQuery(api.tasks.get);
 </script>
 
 <template>
-    <h1>You did it!</h1>
-    <Button>Click me</Button>
-    <p>Visit <a href="https://vuejs.org/" target="_blank" rel="noopener">vuejs.org</a> to read the documentation</p>
-    <span v-if="isPending"> Loading... </span>
-    <ul v-else>
-        <li v-for="todo in data" :key="todo._id">{{ todo.text }} {{ todo.isCompleted ? '☑' : '☐' }}</li>
-    </ul>
+    <section class="mx-auto">
+        <h1>You did it!</h1>
+        <Button>Click me</Button>
+        <p>Visit <a href="https://vuejs.org/" target="_blank" rel="noopener">vuejs.org</a> to read the documentation</p>
+        <span v-if="isPending"> Loading... </span>
+        <ul v-else>
+            <li v-for="todo in data" :key="todo._id">{{ todo.text }} {{ todo.isCompleted ? '☑' : '☐' }}</li>
+        </ul>
+    </section>
 </template>
-
-<style scoped></style>
