@@ -19,18 +19,24 @@ const { user, signOut } = useAuth();
 
 const initials = computed(() => {
     if (!user.value) return '??';
-    const name = user.value.name || user.value.email || '';
-    return name
-        .split(' ')
-        .map((n) => n[0])
-        .join('')
-        .toUpperCase()
-        .slice(0, 2);
+    const first = user.value.firstName?.[0] || '';
+    const last = user.value.lastName?.[0] || '';
+    if (first || last) {
+        return (first + last).toUpperCase();
+    }
+    // Fallback to email first char
+    return user.value.email?.[0]?.toUpperCase() || '??';
 });
 
-const displayName = computed(() => user.value?.name || 'User');
+const displayName = computed(() => {
+    if (!user.value) return 'User';
+    if (user.value.firstName || user.value.lastName) {
+        return `${user.value.firstName || ''} ${user.value.lastName || ''}`.trim();
+    }
+    return user.value.email?.split('@')[0] || 'User';
+});
 const displayEmail = computed(() => user.value?.email || '');
-const avatarUrl = computed(() => '');
+const avatarUrl = computed(() => user.value?.avatarUrl || '');
 </script>
 
 <template>

@@ -26,7 +26,7 @@ function handleThemeToggle() {
     <MainLayout :breadcrumbs="[{ label: t('nav.dashboard') }]">
         <div class="mb-6 flex items-center justify-between">
             <div>
-                <h1 class="text-2xl font-bold">{{ t('dashboard.welcome') }}, {{ user?.name || user?.email || 'User' }}</h1>
+                <h1 class="text-2xl font-bold">{{ t('dashboard.welcome') }}, {{ user?.firstName || user?.email || 'User' }}</h1>
                 <p class="text-muted-foreground text-sm">{{ locale === 'en' ? 'English' : 'Čeština' }}</p>
             </div>
             <div class="flex items-center gap-4">

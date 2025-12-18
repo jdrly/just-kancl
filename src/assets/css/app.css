@@ -118,3 +118,26 @@
         @apply bg-background text-foreground;
     }
 }
+
+/* Sidebar scrollbar styling */
+[data-sidebar='sidebar'] {
+    scrollbar-width: thin;
+    scrollbar-color: var(--sidebar-border) transparent;
+}
+
+[data-sidebar='sidebar']::-webkit-scrollbar {
+    width: 6px;
+}
+
+[data-sidebar='sidebar']::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+[data-sidebar='sidebar']::-webkit-scrollbar-thumb {
+    background-color: var(--sidebar-border);
+    border-radius: 3px;
+}
+
+[data-sidebar='sidebar']::-webkit-scrollbar-thumb:hover {
+    background-color: var(--muted-foreground);
+}
